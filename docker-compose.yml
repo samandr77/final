@@ -1,0 +1,16 @@
+
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: structuredb
+    ports:
+      - "5433:5432" # Проброс порта
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Сохранение данных на локальной машине
+
+volumes:
+  pgdata:
